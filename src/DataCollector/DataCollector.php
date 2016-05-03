@@ -5,8 +5,8 @@ namespace Zhp\DataCollector;
 use Zhp\DataCollector\Interfaces\CollectorInterface;
 use Zhp\DataCollector\Interfaces\RequestIdGeneratorInterface;
 use Zhp\DataCollector\Interfaces\StorageInterface;
-use Zhp\DataCollector\Exceptions\DataCollectorException;
 use Zhp\DataCollector\Generators\RequestIdGenerator;
+use Zhp\DataCollector\Exceptions\DataCollectorException;
 
 class DataCollector implements \ArrayAccess
 {
