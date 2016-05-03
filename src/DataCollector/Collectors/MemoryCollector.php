@@ -19,10 +19,10 @@ class MemoryCollector extends AbstractCollector
     public function collect()
     {
         $this->updatePeakUsage();
-        return array(
+        return [
             'peak_usage' => $this->peakUsage,
             'peak_usage_str' => $this->getDataFormatter()->formatBytes($this->peakUsage)
-        );
+        ];
     }
 
     public function getName()

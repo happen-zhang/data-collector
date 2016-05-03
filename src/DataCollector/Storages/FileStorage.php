@@ -30,13 +30,13 @@ class FileStorage implements StorageInterface
 
     public function find(array $filters = [], $max = 20, $offset = 0)
     {
-        $files = array();
+        $files = [];
         foreach (new DirectoryIterator($this->dirname) as $file) {
             if ($file->getExtension() == 'json') {
-                $files[] = array(
+                $files[] = [
                     'time' => $file->getMTime(),
                     'id' => $file->getBasename('.json')
-                );
+                ];
             }
         }
 
@@ -44,7 +44,7 @@ class FileStorage implements StorageInterface
             return $a['time'] < $b['time'];
         });
 
-        $results = array();
+        $results = [];
         $i = 0;
         foreach ($files as $file) {
             if ($i++ < $offset && empty($filters)) {
