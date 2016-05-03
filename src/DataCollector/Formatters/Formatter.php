@@ -8,7 +8,7 @@ class Formatter implements FormatterInterface
 {
     public function formatVar($data)
     {
-        return trim($data);
+        return $data;
     }
 
     public function formatDuration($seconds)
