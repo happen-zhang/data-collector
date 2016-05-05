@@ -79,7 +79,7 @@ class MessagesCollector extends AbstractLogger implements CollectorInterface, Me
         return $messages;
     }
 
-    public function log($level, $message, array $context = array())
+    public function log($level, $message, array $context = [])
     {
         $this->addMessage($message, $level);
     }
