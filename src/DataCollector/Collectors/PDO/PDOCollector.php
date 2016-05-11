@@ -2,6 +2,7 @@
 
 namespace Zhp\DataCollector\Collectors\PDO;
 
+use PDO;
 use Zhp\DataCollector\Collectors\AbstractCollector;
 use Zhp\DataCollector\Collectors\TimeDataCollector;
 
@@ -70,6 +71,7 @@ class PDOCollector extends AbstractCollector
             $data['accumulated_duration'] += $pdodata['accumulated_duration'];
             $data['memory_usage'] += $pdodata['memory_usage'];
             $data['peak_memory_usage'] = max($data['peak_memory_usage'], $pdodata['peak_memory_usage']);
+            $data['connection_status'] = $pdo->getAttribute(PDO::ATTR_CONNECTION_STATUS);
             $data['statements'] = array_merge($data['statements'],
                 array_map(function ($s) use ($name) { $s['connection'] = $name; return $s; }, $pdodata['statements']));
         }
