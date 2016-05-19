@@ -11,6 +11,12 @@ interface CollectorInterface
     public function getName();
 
     /**
+     * 设置收集器名称
+     * @param [type] $name [description]
+     */
+    public function setName($name);
+
+    /**
      * 收集动作
      * @return [type] [description]
      */

@@ -4,6 +4,8 @@ namespace Zhp\DataCollector\Collectors;
 
 class RequestDataCollector extends AbstractCollector
 {
+    protected $collectorName = 'request';
+
     public function collect()
     {
         $vars = ['_GET', '_POST', '_SESSION', '_COOKIE', '_SERVER'];
@@ -16,10 +18,5 @@ class RequestDataCollector extends AbstractCollector
         }
 
         return $data;
-    }
-
-    public function getName()
-    {
-        return 'request';
     }
 }

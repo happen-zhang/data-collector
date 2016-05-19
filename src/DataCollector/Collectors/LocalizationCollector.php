@@ -4,6 +4,8 @@ namespace Zhp\DataCollector\Collectors;
 
 class LocalizationCollector extends AbstractCollector
 {
+    protected $collectorName = 'localization';
+
     public function getLocale()
     {
         return setlocale(LC_ALL, 0);
@@ -20,10 +22,5 @@ class LocalizationCollector extends AbstractCollector
             'locale' => $this->getLocale(),
             'domain' => $this->getDomain(),
         ];
-    }
-
-    public function getName()
-    {
-        return 'localization';
     }
 }

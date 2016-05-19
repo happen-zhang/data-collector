@@ -6,6 +6,8 @@ class MemoryCollector extends AbstractCollector
 {
     protected $peakUsage = 0;
 
+    protected $collectorName = 'memory';
+
     public function getPeakUsage()
     {
         return $this->peakUsage;
@@ -23,10 +25,5 @@ class MemoryCollector extends AbstractCollector
             'peak_usage' => $this->peakUsage,
             'peak_usage_str' => $this->getDataFormatter()->formatBytes($this->peakUsage)
         ];
-    }
-
-    public function getName()
-    {
-        return 'memory';
     }
 }

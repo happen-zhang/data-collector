@@ -16,6 +16,8 @@ class PDOCollector extends AbstractCollector
 
     protected $sqlQuotationChar = '<>';
 
+    protected $collectorName = 'pdo';
+
     public function __construct(TraceablePDO $pdo = null, TimeDataCollector $timeCollector = null)
     {
         $this->timeCollector = $timeCollector;
@@ -120,10 +122,5 @@ class PDOCollector extends AbstractCollector
             'peak_memory_usage_str' => $this->getDataFormatter()->formatBytes($pdo->getPeakMemoryUsage()),
             'statements' => $stmts
         ];
-    }
-
-    public function getName()
-    {
-        return 'pdo';
     }
 }

@@ -15,6 +15,8 @@ class TimeDataCollector extends AbstractCollector
 
     protected $measures = [];
 
+    protected $collectorName = 'time';
+
     public function __construct($requestStartTime = null)
     {
         if ($requestStartTime === null) {
@@ -123,10 +125,5 @@ class TimeDataCollector extends AbstractCollector
             'duration_str' => $this->getDataFormatter()->formatDuration($this->getRequestDuration()),
             'measures' => array_values($this->measures)
         ];
-    }
-
-    public function getName()
-    {
-        return 'time';
     }
 }

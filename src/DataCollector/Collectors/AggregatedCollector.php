@@ -8,17 +8,17 @@ use Zhp\DataCollector\Exceptions\DataCollectorException;
 
 class AggregatedCollector implements CollectorInterface, ArrayAccess
 {
-    protected $name;
-
     protected $mergeProperty;
 
     protected $sort;
 
     protected $collectors = [];
 
+    protected $collectorName;
+
     public function __construct($name, $mergeProperty = null, $sort = false)
     {
-        $this->name = $name;
+        $this->collectorName = $name;
         $this->mergeProperty = $mergeProperty;
         $this->sort = $sort;
     }
@@ -87,11 +87,6 @@ class AggregatedCollector implements CollectorInterface, ArrayAccess
         }
 
         return $data;
-    }
-
-    public function getName()
-    {
-        return $this->name;
     }
 
     public function offsetSet($key, $value)

@@ -9,7 +9,7 @@ use Zhp\DataCollector\Interfaces\FormatterInterface;
 
 class MessagesCollector extends AbstractLogger implements CollectorInterface, MessagesAggregateInterface
 {
-    protected $name;
+    protected $collectorName;
 
     protected $messages = [];
 
@@ -19,7 +19,7 @@ class MessagesCollector extends AbstractLogger implements CollectorInterface, Me
 
     public function __construct($name = 'messages')
     {
-        $this->name = $name;
+        $this->collectorName = $name;
     }
 
     public function setDataFormatter(FormatterInterface $formater)
@@ -96,10 +96,5 @@ class MessagesCollector extends AbstractLogger implements CollectorInterface, Me
             'count' => count($messages),
             'messages' => $messages
         ];
-    }
-
-    public function getName()
-    {
-        return $this->name;
     }
 }

@@ -4,13 +4,13 @@ namespace Zhp\DataCollector\Collectors;
 
 class ConfigCollector extends AbstractCollector
 {
-    protected $name;
-
     protected $data;
+
+    protected $collectorName;
 
     public function __construct(array $data = [], $name = 'config')
     {
-        $this->name = $name;
+        $this->collectorName = $name;
         $this->data = $data;
     }
 
@@ -32,10 +32,5 @@ class ConfigCollector extends AbstractCollector
         }
 
         return $data;
-    }
-
-    public function getName()
-    {
-        return $this->name;
     }
 }

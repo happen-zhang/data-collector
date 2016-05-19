@@ -10,6 +10,8 @@ class ExceptionsCollector extends AbstractCollector
 
     protected $chainExceptions = false;
 
+    protected $collectorName = 'exceptions';
+
     public function addException(Exception $e)
     {
         $this->exceptions[] = $e;
@@ -56,10 +58,5 @@ class ExceptionsCollector extends AbstractCollector
             'line' => $e->getLine(),
             'surrounding_lines' => $lines
         ];
-    }
-
-    public function getName()
-    {
-        return 'exceptions';
     }
 }

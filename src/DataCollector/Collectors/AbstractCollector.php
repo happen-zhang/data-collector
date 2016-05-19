@@ -12,6 +12,18 @@ abstract class AbstractCollector implements CollectorInterface
 
     protected $dataFormater;
 
+    protected $collectorName;
+
+    public function setName($collectorName)
+    {
+        $this->collectorName = $collectorName;
+    }
+
+    public function getName()
+    {
+        return $this->collectorName;
+    }
+
     public static function setDefaultDataFormatter(FormatterInterface $formater)
     {
         self::$defaultDataFormatter = $formater;
